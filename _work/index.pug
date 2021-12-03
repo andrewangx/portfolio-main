@@ -1,6 +1,34 @@
+//- 
+	Pug (pugjs.org/) is a preprocessing language for HTML. It has it's own syntax, meaning you would have to learn another laguage to work with it effectively. There are some advantages to working with a language like pug though: 
+	- templating ability 
+	- more legible/simpler markup
+	- HTML compression 
+	- error prevention
+	- reusable code 
+
 doctype html
+//- Attributes in Pug are placed within a pair of regular brackets attached to the end of the element they are assigned to. In this case, html(lang="en") will be processed into <html lang="en">
 html(lang="en")
-    head
-    
-        meta(charset="utf-8")
+	//- Much like other HTML/CSS preprocessing languages, Pug nests elements based on their indenting. Because the head element below is indented one level, when it processes the Pug file the output will be <html><head>...</head> ...</html>
+	head
+	
+		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width,initial-scale=1")
+
+		//- If there is content for an element, it is simply placed after the element is added in Pug.
+		title Speed optimization tutorial 
+
+		link(rel="stylesheet" href="css/custom.css")
+		link(rel="stylesheet" href="css/default.css")
+
+	body
+
+		//- Classes can be applied to elements by placing the class names immediately after the element within Pug. img.center(...) will be processed into <img class="center" ...>
+		//- img.center(src="img/Bird.gif" alt="A orange-throated bird sitting on top of a park bench looking around")
+
+		//- Below is the <img> element with the height and width attribute added back, to help demonstrate content shift
+		img.center.lazyload(src="img/Bird.jpg" data-src="img/Bird.gif" height="270" width="480" alt="A orange-throated bird sitting on top of a park bench looking around")
+
+		p Parsley lingonberry dragon fruit cozy cinnamon oatmeal kale caesar salad spiced pumpkin chili cool off guacamole lemon lime minty black bean wraps lime sesame soba noodles seeds simmer onion enchiladas habanero golden Thai super chili Sicilian pistachio pesto lentils oranges fall mint lime taco salsa. Comforting pumpkin spice latte one bowl Bulgarian carrot blueberry chia seed jam coconut milk burritos Mexican fiesta almond milk chai latte avocado basil pesto tahini drizzle orange instant pot ginger tofu peppermint fiery fruit blueberries broccoli.
+
+		script(src="js/lazysizes.min.js")

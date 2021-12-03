@@ -1,0 +1,26 @@
+* 
+	// No ending semicolons ';' are required with property: value statements in SASS 
+	box-sizing: border-box
+
+body
+	margin: 0 
+	font-family: sans-serif
+
+	// By nesting another selector inside we can create parent/child relationships in the processed CSS. In this case, the 'img.center' selector here will translate to 'body img.center {...}' in our processed CSS.
+	img.center
+		display: block
+		height: auto
+		min-width: 100%
+		max-width: 100%
+		margin: 0 auto
+
+
+		&.lazyload, &.lazyloading
+			filter: blur(10px)
+		
+		&lazyloaded
+			filter: blur(0)
+
+p 
+	padding: 0.5rem 1rem
+	max-width: 40rem
